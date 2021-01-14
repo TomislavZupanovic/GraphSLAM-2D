@@ -33,7 +33,9 @@ class Robot(object):
 
     def sense(self, landmarks):
         """ Performs sensing of landmarks in robot environment and calculates distances
-            in x and y coordinates from robot to landmarks in measurement range """
+            in x and y coordinates from robot to landmarks in measurement range.
+            Mesurement shape is: [landmark_id, dx, dy] where dx and dy are distances from
+            robot to that landmark """
         measurements = []
         for landmark_id, landmark in enumerate(landmarks):
             dx = landmark[0] - self.x + self.random_num() * self.measurement_noise
