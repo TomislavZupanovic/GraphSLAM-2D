@@ -63,12 +63,17 @@ class World(object):
         plt.grid(which='minor', ls='-', lw=1, color='white')
         plt.grid(which='major', ls='-', lw=2, color='white')
         # Iterate over robot positions and plot the path and last location
-        for i in range(len(robot_positions) - 1):
-            dx = robot_positions[i + 1][0] - robot_positions[i][0]
-            dy = robot_positions[i + 1][1] - robot_positions[i][1]
-            ax.arrow(robot_positions[i][0], robot_positions[i][1], dx, dy, head_width=0.25,
-                     length_includes_head=True, color='gray')
-        ax.text(robot_positions[-1][0], robot_positions[-1][1], 'o', ha='center', va='center', color='r', fontsize=30)
+        if len(robot_positions) > 1:
+            for i in range(len(robot_positions) - 1):
+                dx = robot_positions[i + 1][0] - robot_positions[i][0]
+                dy = robot_positions[i + 1][1] - robot_positions[i][1]
+                ax.arrow(robot_positions[i][0], robot_positions[i][1], dx, dy, head_width=0.25,
+                         length_includes_head=True, color='gray')
+            ax.text(robot_positions[-1][0], robot_positions[-1][1], 'o', ha='center', va='center',
+                    color='r', fontsize=30)
+        else:
+            ax.text(robot_positions[-1][0], robot_positions[-1][1], 'o', ha='center', va='center',
+                    color='r', fontsize=30)
         # Iterate over landmark positions and plot them on map
         for pos in landmark_positions:
             ax.text(pos[0], pos[1], 'x', ha='center', va='center', color='purple', fontsize=20)
