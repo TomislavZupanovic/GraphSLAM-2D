@@ -41,6 +41,6 @@ There are options for other parameters but best if default:
  
  **Example results**
  
- <img src="https://github.com/TomislavZupanovic/GraphSLAM-2D/blob/main/images/script_results.jpg" width="600" height="550">
+ <img src="https://github.com/TomislavZupanovic/GraphSLAM-2D/blob/main/images/script_results.jpg" width="550" height="450">
 
-<img src="https://github.com/TomislavZupanovic/GraphSLAM-2D/blob/main/images/Figure1.jpeg" width="600" height="550">
+<img src="https://github.com/TomislavZupanovic/GraphSLAM-2D/blob/main/images/Figure1.jpeg" width="700" height="500">
