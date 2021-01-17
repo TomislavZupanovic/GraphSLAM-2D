@@ -43,6 +43,7 @@ class SLAM2D(object):
     def run_slam(self, data):
         """ Runs the SLAM algorithm with measurement and motion updates, calculates the mu vector
             with all estimated Robot movement and landmark locations """
+        print('\nRunning SLAM...')
         # Initialize Omega and Xi with start position
         self._initialize_constraints()
         # Get all the motion and measurement iterating over data
@@ -69,6 +70,7 @@ class SLAM2D(object):
         # Calculate mu vector with inverse omega matrix and xi vector
         omega_inverse = np.linalg.inv(np.matrix(self.omega))
         self.mu = omega_inverse * self.xi
+        print('Done!')
 
     def get_poses_landmarks(self):
         """ Creates lists of Robot poses and landmarks positions from Mu vector """
@@ -85,7 +87,7 @@ class SLAM2D(object):
     def show_results(self):
         """ Prints the resulting Robot poses and landmarks positions """
         poses, landmarks = self.get_poses_landmarks()
-        print('\nSLAM:')
+        print('\nSLAM results:')
         print('Estimated Positions:')
         for i in range(len(poses)):
             print('[' + ', '.join('%.3f' % p for p in poses[i]) + ']')

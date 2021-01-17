@@ -12,7 +12,7 @@ class Robot(object):
         self.y = world_size / 2.0
 
     def __repr__(self):
-        return f'Robot location: [x = {self.x}, y = {self.y}]'
+        return f'Robot location: [x = {round(self.x, 3)}, y = {round(self.y, 3)}]'
 
     @staticmethod
     def random_num():
