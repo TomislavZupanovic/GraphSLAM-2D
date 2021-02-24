@@ -21,6 +21,8 @@
   <exec_depend>std_msgs</exec_depend>
   <exec_depend>message_runtime</exec_depend>
   <exec_depend>python-numpy</exec_depend>
+  <exec_depend>python-matplotlib</exec_depend>
+  <exec_depend>python-seaborn</exec_depend>
 
   <export>
   </export>

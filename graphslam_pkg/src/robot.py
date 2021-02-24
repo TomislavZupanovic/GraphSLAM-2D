@@ -44,3 +44,4 @@ class Robot(object):
             if abs(dx) <= self.measurement_range and abs(dy) <= self.measurement_range:
                 measurements.append([landmark_id, dx, dy])
         return measurements
+        
